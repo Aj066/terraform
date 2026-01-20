@@ -1,9 +1,9 @@
 variable "filename" {
   type    = string
-  default = "pets.txt"
+  default = "beast.txt"
 }
 
 variable "content" {
   type    = string
-  default = "i love my pets which are cats"
+  default = "my pets are far too dengerous then you"
 }
