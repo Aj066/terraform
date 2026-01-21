@@ -4,7 +4,7 @@ resource "aws_iam_user" "Admin-user" {
  "description" = "Technical Team Lead"
  }
 }
-resource "aws_iam_policy" "adminuser" {
+resource "aws_iam_policy" "admin-user" {
  name = "AdminUsers"
  policy = <<EOF
 {
