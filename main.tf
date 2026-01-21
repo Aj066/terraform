@@ -9,19 +9,15 @@ resource "aws_iam_user" "admin_user" {
 resource "aws_iam_policy" "admin_user_policy" {
   name = "AdminUsers"
 
-  policy = <<EOF
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "AdminAccess",
-      "Effect": "Allow",
-      "Action": "*",
-      "Resource": "*"
-    }
-  ]
-}
-EOF
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Sid      = "AdminAccess"
+      Effect   = "Allow"
+      Action   = "*"
+      Resource = "*"
+    }]
+  })
 }
 
 resource "aws_iam_user_policy_attachment" "admin_user_attach" {
